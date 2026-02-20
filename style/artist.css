@@ -1,0 +1,607 @@
+@font-face {
+  font-family:b-ziba;
+  src: url(./Far_BadrBold/Far_BadrBold.ttf);
+ 
+}
+body{
+  font-family: b-ziba;
+
+  overflow-x: hidden;
+      overflow-y: visible;
+  
+}
+
+
+.Btnmenu {
+  width: 60px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin: 20px;
+ 
+}
+
+.Btnmenu::before {
+  position: absolute;
+  content: "منو";
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.Btnmenu:hover {
+  background-position:right;
+  transition-duration: 1s;
+}
+
+.Btnmenu:hover::before {
+  background-position:right;
+  transition-duration: 1s;
+}
+
+.Btnmenu:active {
+  transform:scale(0.95);
+}
+
+ .list-unstyled li a{
+      color:#ffbd77;
+      text-align: right;
+      
+
+    }
+     .list-unstyled li{
+      
+      padding: 18px ;
+      text-align: right;
+      font-size: 24px;
+      font-weight:  900;
+      
+     }
+
+ .list-unstyled li a:hover{
+color: #fff3da;
+ }
+
+
+.video-background {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  
+  
+}
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+
+}
+.overlay {
+  position: relative;
+  color: rgb(246, 227, 198);
+  text-align: center;
+  top: 40%;
+}
+
+.paralax{
+  height: 550px;
+background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+   background-image: url(https://i.pinimg.com/1200x/51/09/bc/5109bc622d6c9e76dd0868ed5547a561.jpg);
+
+}
+
+
+.ui-input-container {
+  position: relative;
+  width: 400px;
+  direction: rtl;
+  margin: 60px auto;
+  color: #fff;
+}
+
+.ui-input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  font-size: 1em;
+  border: none;
+  border-bottom: 2px solid #915e25;
+  outline: none;
+  background-color: transparent;
+  transition: border-color 0.3s;
+}
+
+.ui-input:focus {
+  border-color: #915e25;
+}
+
+.ui-input-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #915e25;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.ui-input:focus + .ui-input-underline {
+  transform: scaleX(1);
+}
+
+.ui-input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(255, 193, 99, 0.1);
+  transition: width 0.3s;
+}
+
+.ui-input:focus ~ .ui-input-highlight {
+  width: 100%;
+}
+
+.ui-input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #915e25;
+  transition: color 0.3s;
+}
+
+.ui-input:focus ~ .ui-input-icon {
+  color: #915e25;
+}
+
+.ui-input-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+ 
+.card {
+  position: relative;
+  width: 11.875em;
+  height: 16.5em;
+  box-shadow: -3px -4px 8px 10px rgba(189, 122, 40, 0.55);
+  cursor: pointer;
+  transition: all 120ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #121212;
+  padding: 0.5em;
+  padding-bottom: 3.4em;
+  border-radius: 20px;
+  margin: 40px;
+}
+
+.card::after {
+  content: "بیوگرافی";
+ padding-top: 0.3em;
+  padding-left: 1.8em; 
+  position: absolute;
+  /* left: 0; */
+  bottom: -60px;
+  background: #97600e;
+  color: #fff;
+  height: 2em;
+  width: 60%;
+  transition: all 80ms;
+  font-weight: 800;
+  text-transform: uppercase;
+  opacity: 0;
+  border-radius: 20px;
+
+}
+
+.card .title {
+
+  font-size: 20px;
+  position: absolute;
+   
+  bottom: 1.875em;
+  font-weight: 400;
+  color: #000;
+  
+  
+}
+
+.card .price {
+  
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 0.625em;
+  color: #000;
+}
+
+.card:hover::after {
+  bottom: 0;
+  opacity: 1;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.card:active::after {
+  content: "Added !";
+  height: 3.125em;
+}
+
+.text {
+  max-width: 55px;
+}
+
+.image {
+  background: #121212;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+
+
+
+.button-1{
+  --green: #aa7929;
+  font-size: 17px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+ font-weight: bold;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--yellow);
+  background: linear-gradient(to right, rgba(253, 166, 27, 0.1) 1%, transparent 40%,transparent 60% , rgba(253, 181, 27, 0.1) 100%);
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(253, 200, 27, 0.4), 0 0 9px 3px rgba(253, 163, 27, 0.1);
+}
+
+.button-1:hover {
+  color: #f6ae50;
+  box-shadow: inset 0 0 10px rgba(253, 181, 27, 0.6), 0 0 9px 3px rgba(253, 181, 27, 0.2);
+}
+
+.button-1:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(253, 178, 27, 0.1) 40%,rgba(253, 181, 27, 0.1) 60% , transparent 100%);
+}
+.button-1:hover:before {
+  transform: translateX(15em);
+}
+
+
+
+.card-footer .card {
+  width: fit-content;
+  height: fit-content;
+  background-color: #481717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: #a06711;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+/* From Uiverse.io by SelfMadeSystem */ 
+.rating {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+  --stroke: #666;
+  --fill: #ffc73a;
+}
+
+.rating input {
+  appearance: unset;
+}
+
+.rating label {
+  cursor: pointer;
+}
+
+.rating svg {
+  width: 2rem;
+  height: 2rem;
+  overflow: visible;
+  fill: transparent;
+  stroke: var(--stroke);
+  stroke-linejoin: bevel;
+  stroke-dasharray: 12;
+  animation: idle 4s linear infinite;
+  transition: stroke 0.2s, fill 0.5s;
+}
+
+@keyframes idle {
+  from {
+    stroke-dashoffset: 24;
+  }
+}
+
+.rating label:hover svg {
+  stroke: var(--fill);
+}
+
+.rating input:checked ~ label svg {
+  transition: 0s;
+  animation: idle 4s linear infinite, yippee 0.75s backwards;
+  fill: var(--fill);
+  stroke: var(--fill);
+  stroke-opacity: 0;
+  stroke-dasharray: 0;
+  stroke-linejoin: miter;
+  stroke-width: 8px;
+}
+
+@keyframes yippee {
+  0% {
+    transform: scale(1);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+
+  30% {
+    transform: scale(0);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+
+  30.1% {
+    stroke: var(--fill);
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+
+  60% {
+    transform: scale(1.2);
+    fill: var(--fill);
+  }
+}
+
+.messageBox {
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffeed4;
+  padding: 0 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(96, 65, 13);
+}
+.messageBox:focus-within {
+  border: 1px solid #606060;
+}
+.fileUploadWrapper {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#file {
+  display: none;
+}
+.fileUploadWrapper label {
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.fileUploadWrapper label svg {
+  height: 18px;
+}
+.fileUploadWrapper label svg path {
+  transition: all 0.3s;
+}
+.fileUploadWrapper label svg circle {
+  transition: all 0.3s;
+}
+.fileUploadWrapper label:hover svg path {
+  stroke: #fff;
+}
+.fileUploadWrapper label:hover svg circle {
+  stroke: #fff;
+  fill: #3c3c3c;
+}
+.fileUploadWrapper label:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+.tooltip {
+  position: absolute;
+  top: -40px;
+  display: none;
+  opacity: 0;
+  color: white;
+  font-size: 10px;
+  text-wrap: nowrap;
+  background-color: #ffe2a7c8;
+  padding: 6px 10px;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+  transition: all 0.3s;
+}
+#messageInput {
+  width: 200px;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  color: #f5f5f5;
+direction: rtl;
+}
+#messageInput:focus ~ #sendButton svg path,
+#messageInput:valid ~ #sendButton svg path {
+  fill: #3c3c3c;
+  stroke: white;
+}
+
+#sendButton {
+  width: fit-content;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#sendButton svg {
+  height: 18px;
+  transition: all 0.3s;
+  
+}
+#sendButton svg path {
+  transition: all 0.3s;
+  
+}
+#sendButton:hover svg path {
+  fill: #3682f4;
+  stroke: white;
+}
+
+.list-unstyled a{
+text-decoration: none;
+
+  
+}
+.list-unstyled li{
+  text-align: center;
+}
+
+.artist-img{
+  width: 200px;
+  border-radius: 50%;
+  margin: 10px auto;
+  display: block;
+    box-shadow: -3px -4px 10px 10px rgba(189, 122, 40, 0.55);
+
+}
