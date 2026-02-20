@@ -1,999 +1,0 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Art gallery</title>
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.css">
- <link rel="stylesheet" href="./style/style.css">
-</head>
-<body>
-  
-  <div id="toast" class="toast-message"></div>
-  <header>
-    
-<button  data-aos="fade-right" data-aos-duration="2000" class="Btnmenu " data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasDarkNavbar" aria-label="Toggle ">
-</button>
-   <a href="./index.html" class=" text-decoration-none" > <h1  data-aos="fade-left" data-aos-duration="2000"  >  گالری   <span> Art </span> <img src="./image/show-art.png" alt="" width="50px">  </h1></a>
-    
-   
-  </header>
-
-  
-  <div class="offcanvas offcanvas-start  " tabindex="-1" id="offcanvasMenu" style="background-color: #110d0bc0 ;color: #f8d287;">
-    <div class="offcanvas-header">
-      
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <ul class="list-unstyled">
-        <li><a href="./index.html" class=" text-decoration-none"  >  <img src="./image/house.png" alt="" width="20px" style="margin: 0px 10px;">خانه</a></li>
-        <li><a href="./shop.htm" class=" text-decoration-none">  <img src="./image/store.png" alt="" width="20px" style="margin: 0px 10px;">فروشگاه</a></li>
-        <li><a href="./artist.htm" class=" text-decoration-none"> <img src="./image/painter.png" alt="" width="30px" style="margin: 0px 10px;"> هنرمندان</a></li>
-        <li><a href="./works.htm" class=" text-decoration-none" >  <img src="./image/gallery.png" alt="" width="20px" style="margin: 0px 10px;">    اثر های هنری</a></li>
-        <li data-bs-toggle="offcanvas" data-bs-target="#cartCanvas2"><a href="#" class=" text-decoration-none">   <img src="./image/shopping-cart.png" alt="" width="30px" style="margin: 0px 10px;" >  سبد خرید</a></li>
-        <li data-bs-toggle="modal" data-bs-target="#exampleModal"><a href="#" class=" text-decoration-none" >  <img src="./image/office-man.png" alt="" width="20px" style="margin: 0px 10px;"> ورود/ثبت نام</a></li>
-        <li><a href="#" class=" text-decoration-none">  <img src="./image/telephone.png" alt="" width="20px" style="margin: 0px 10px;"> تماس با ما</a></li>
-      
-      </ul>
-    </div>
-  </div>
-
-
- 
-  
-
-
-
-<div class="modal fade bgmodal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color: #121212;">
-      <div class="modal-header">
-       
-        <button class="button1" data-bs-dismiss="modal">
-          <span class="X"></span>
-          <span class="Y"></span>
-          <div class="close1">Close</div>
-        </button>
-      </div>
-      <div class="modal-body">
-        <ul class="nav nav-tabs nav-fill mb-4" id="formTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">ورود</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab">ثبت‌نام</button>
-          </li>
-        </ul>
-        <div class="tab-content" id="formTabsContent">
-          
-          <div class="tab-pane fade show active" id="login" role="tabpanel">
-            <form id="loginForm">
-              <div class="mb-3">
-                <label for="loginEmail" class="form-label fs-5 fw-bold">ایمیل</label>
-                <input type="email" class="form-control" id="loginEmail" placeholder="ایمیل خود را وارد کنید">
-              </div>
-              <div class="mb-3">
-                <label for="loginPassword" class="form-label fw-bold">رمز عبور</label>
-                <input type="password" class="form-control" id="loginPassword" placeholder="رمز عبور را وارد کنید">
-              </div>
-              <a href="#" style="text-decoration: none;">رمز عبور خود را فراموش کردید؟</a>
-              <button type="submit" class="btn btn-primary w-100 mt-3">ورود</button>
-            </form>
-          </div>
-
-          <div class="tab-pane fade" id="signup" role="tabpanel">
-            <form id="signupForm">
-              <div class="mb-3">
-                <label for="signupName" class="form-label fw-bold">نام کامل</label>
-                <input type="text" class="form-control" id="signupName" placeholder="نام کامل خود را وارد کنید">
-              </div>
-              <div class="mb-3">
-                <label for="signupEmail" class="form-label fw-bold">ایمیل</label>
-                <input type="email" class="form-control" id="signupEmail" placeholder="ایمیل خود را وارد کنید">
-              </div>
-              <div class="mb-3">
-                <label for="signupPassword" class="form-label fw-bold">رمز عبور</label>
-                <input type="password" class="form-control" id="signupPassword" placeholder="رمز عبور را وارد کنید">
-              </div>
-              <div class="mb-3">
-                <label for="signupPasswordRepeat" class="form-label fw-bold">تکرار رمز عبور</label>
-                <input type="password" class="form-control" id="signupPasswordRepeat" placeholder="رمز عبور را دوباره وارد کنید">
-              </div>
-              <button type="submit" class="btn btn-success w-100 mt-3">ثبت‌نام</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-<div class="offcanvas offcanvas-start" tabindex="-1" id="cartCanvas2" style="background-color: #110d0bc0 ;color: #f8d287;">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title">🛒 سبد خرید شما</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-  </div>
-  <div class="offcanvas-body">
-    <ul id="cart"></ul>
-    <hr>
-    <p>جمع کل: <span id="total">0</span> تومان</p>
-  </div>
-</div>
-
-  
- 
-  <div id="mainCarousel" class="carousel slide carousel-fade " data-bs-ride="carousel" data-bs-interval="3000" >
-    <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-  
-  
-  </div>
-    
-    
-    
-    <div class="carousel-inner ">
-       <div class="carousel-item active" style="background-color:rgb(20, 36, 32);" animate__animated animate__fadeInLeft>
-        <div class="carousel-content">
-          <img src="./image/mike-leveton-GzBYhU8a6h0-unsplash (1).jpg" alt="Artwork 1"   data-aos="fade-right" data-aos-duration="2000" class="carouselactive">
-
-          <div class="carousel-text">
-
-            <h2 data-aos="zoom-in" data-aos-duration="2000" animate__animated animate__fadeInLeft>«گالری ما، پنجره‌ای به جهان هنر»</h2>
-            <p data-aos="zoom-in" data-aos-duration="2000">«اینجا محل تلاقی نگاه‌ها، احساس‌ها و هنر ناب است.»</p>
-           
-          </div>
-        </div>
-      </div>
-
-   
-      <div class="carousel-item" style="background-color: rgb(0, 7, 36);">
-        <div class="carousel-content">
-          <img src="https://artlogic-res.cloudinary.com/w_1000,h_1000,c_limit,f_auto,fl_lossy,q_auto:good/ws-philipmould//usr/images/exhibitions/main_image_override/items/e2/e290ed3b28964bc69aa268754aec3de3/wolmark-dottie-crop.jpg" alt="Artwork 2"  class="carouselimg" data-aos="zoom-in" data-aos-duration="2000">
-
-          <div class="carousel-text">
-            <h2 >نقاشی مدرن–گرافیکی: Dottie Konstam</h2>
-            <p >«نگاه آرام داتی، در میان رنگ‌های زنده و پرشور، حس زندگی و لحظه را در دل تابلو زنده می‌کند.»</p>
-            
-          </div>
-        </div>
-      </div>
-
-
-      <div class="carousel-item" style="background-color: rgb(72, 23, 20);" >
-        <div class="carousel-content">
-          <img src="https://artlogic-res.cloudinary.com/w_1000,h_1000,c_limit,f_auto,fl_lossy,q_auto:good/ws-philipmould/usr/images/pages/slideshow_data/1/dod-procter-girl-in-a-red-cap.png" alt="Artwork 3"  class="carouselimg" data-aos="fade-right" data-aos-duration="2000">
-
-          <div class="carousel-text">
-            <h2>Girl in a Red Cap 1914</h2>
-            <p>«چشمانی آرام پشت کلاهی سرخ؛ داستانی از سکوت و تداعی در قاب نگاهمان.»</p>
-            
-          </div>
-        </div>
-      </div>
-
-
-      <div class="carousel-item" style="background-color: rgb(37, 26, 24);" animate__animated animate__fadeInLeft>
-        <div class="carousel-content">
-          <img src="https://artlogic-res.cloudinary.com/w_1000,h_1000,c_limit,f_auto,fl_lossy,q_auto:good/ws-philipmould/usr/images/pages/slideshow_data/1/4096-garret-morphy-portrait-of-a-noble-child-crop.png" alt="Artwork 4"  class="carouselimg" data-aos="fade-right" data-aos-duration="2000" >
-
-          <div class="carousel-text">
-            <h2 >(Garret Morphy)</h2>
-            <p>«بی‌گناهی او، رازهای خاموش یک دنیای فراموش‌شده را بازگو می‌کند.»</p>
-            
-          </div>
-        </div>
-      </div>
-
-
-      <div class="carousel-item" style="background-color: rgb(59, 15, 7);" animate__animated animate__fadeInLeft>
-        <div class="carousel-content">
-          <img src="https://artlogic-res.cloudinary.com/w_1000,h_1000,c_limit,f_auto,fl_lossy,q_auto:good/ws-philipmould/usr/images/pages/slideshow_data/1/ann-chase.png" alt="Artwork 5"  class="carouselimg" data-aos="fade-right" data-aos-duration="2000">
-
-          <div class="carousel-text">
-            <h2 animate__animated animate__fadeInLeft>Ann Chase (née Rand)1788</h2>
-            <p>«نگاه ظریف قرن هجدهم؛ سکوتی که سخن می‌گوید.»</p>
-           
-          </div>
-        </div>
-      </div>
-
-
-      <div class="carousel-item" style="background-color: rgb(38, 61, 58);" animate__animated animate__fadeInLeft>
-        <div class="carousel-content">
-          <img src="https://artlogic-res.cloudinary.com/w_1000,h_1000,c_limit,f_auto,fl_lossy,q_auto:good/ws-philipmould/usr/exhibitons/images/pages/1/m1004-duncan-grant-dancers-crop.png" alt="Artwork 6"  class="carouselimg" data-aos="fade-right" data-aos-duration="2000">
-
-          <div class="carousel-text">
-            <h2 animate__animated animate__fadeInLeft>Duncan Grant (رقصندگان، حوالی ۱۹۱۰–۱۱)</h2>
-            <p>«در میان سکوت رنگ‌ها، رقصی سرشار از حضور.»</p>
-          
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-
-  <div class="container-fluid " >
-
-    <div class="row" style="margin: 100px;">
-      <div class="col-6 col-md-4">
-        
-        <img src="./image/yuliia-huzenko-RtPyoqRD5uQ-unsplash.jpg" alt="" style="width: 70%; border-radius: 10px;box-shadow:  -3px -4px 8px 10px rgba(174, 112, 18, 0.749);margin-top: 100px;" class="mx-auto d-block " data-aos="fade-right" data-aos-duration="2000" >
-      <h3 class="text-tablo-img mt-5" style="color: rgba(243, 165, 48, 0.824);" data-aos="fade-right" data-aos-duration="2000" >«جایی که هنر زنده می‌شود.»</h3>
-      
-      </div>
-      
-      
-      <div class="col-6 col-md-4"> <img src="./image/dixit-dhinakaran-9pypLr6UpjA-unsplash.jpg" alt="" style="width: 70%; border-radius: 10px;box-shadow:  -3px -4px 8px 10px rgba(174, 112, 18, 0.749);margin-top: 100px;" class="mx-auto d-block  " data-aos="zoom-in-up" data-aos-duration="2000">
-      <h3 class="text-tablo-img mt-5" style="color: rgba(243, 165, 48, 0.824);" data-aos="zoom-in-up" data-aos-duration="2000" >«هر تابلو، روایتی از روح.»</h3>
-      </div>
-     
-     
-      <div class="col-8 col-md-4"> <img src="./image/basar-dogan-uVBf0tuP1gE-unsplash.jpg" alt=""  style="width: 70%; border-radius: 10px;box-shadow:  -3px -4px 8px 10px rgba(174, 112, 18, 0.749);margin-top: 100px;" class="mx-auto d-block  " data-aos="fade-left" data-aos-duration="2000" >
-      <h3 class="text-tablo-img mt-5" style="color: rgba(243, 165, 48, 0.824);" data-aos="fade-left" data-aos-duration="2000">«هنر، زبان بی‌کلام احساس.»</h3>
-      </div>
-   
-    </div>
-
-
-
-
-  </div>
-
-
-  <div class="container-fluid " style="height:auto;margin-top: 100px; border-radius: 20px;">
-<div class="row">
-  <div class="col-12 col-md-6 "><img src="./image/karim-ben-van-HEGkZoijEG8-unsplash.jpg" alt="" width="60%" class=" mx-auto d-block" style="border-radius: 80px;margin: 100px;" data-aos="fade-right" data-aos-duration="2000" ></div>
-  <div class="col-12 col-md-6">
-<h1 style="color: #ffd277;text-align: center;" class="mt-5" data-aos="zoom-in-up" data-aos-duration="2000" >«خانه‌ای برای نقاشی‌ها و خلاقیت‌های ناب»</h1>
-  <h4 class="text-light mt-5" style="text-align: right;" data-aos="zoom-in-up" data-aos-duration="2000">               ارت گالری با هدف معرفی آثار هنرمندان جوان و مستعد و ایجاد پل ارتباطی بین هنرمند و دوستداران هنر تاسیس شد   </br></br></br>
-  
-  ما معتقدیم هر تابلو داستانی دارد و هر رنگ و حرکت قلم، پیامی برای مخاطب به همراه می‌آورد.</h4>
-  </div>
-</div>
-
-  </div>
-
-
-  <div class="container-fluid" >
-<div class="row">
-
-  <div class="col-12 col-md-6">
-<h1 style="text-align: center; margin: 80px 0px; color: #ffd277;"  data-aos="zoom-in-up" data-aos-duration="2000" >«داستان ارت گالری»</h1>
-<h4 class=" mt-5" style="color: #fff3d8;text-align: right;" data-aos="zoom-in-up" data-aos-duration="2000">ارت گالری از یک رویا شروع شد:</br></br>ایجاد فضایی که در آن هنر نه فقط دیده شود، بلکه حس شود.</br></br> با الهام از رنگ‌ها، نورها و احساسات، ما مسیر خود را با هدف حمایت از هنرمندان و </br>به اشتراک گذاشتن آثارشان با جهان آغاز کردیم
-</br>
-
-اهداف گالری ما:
-</br>
-    </br> 
-     <ul type="disc" style=" direction: rtl;">
-      <li>حمایت و معرفی هنرمندان مستعد </li>
-      <li>ایجاد فضایی برای نمایش و فروش آثار هنری</li>
-      <li> اصالت و احترام به هنرمند</li>
-      <li> کیفیت و دقت در نمایش آثار</li>
-     </ul>
-
-  </h4>
-  </div>
-  <div class="col-12 col-md-6"><img src="./image/philip-mould-notable-sales_van-dyck.png" alt=""  width="90%" class="m-5 mx-auto d-block"  data-aos="fade-left" data-aos-duration="2000" ></div>
-</div>
-
-  </div>
-
-
-  <div class="container-fluid"data-aos="zoom-in-up" data-aos-duration="3000" >
-<h3 style="text-align: center; margin-top: 30px;padding-top: 20px;font-weight: bold;color: #ffd277" >برترین گالری ها</h3>
-<h5 style="text-align: center; margin-top: 10px;color: #faf0db"> برترین گالری‌ها و نگارخانه‌های تهران و سایر شهرها </h5>
-
-<div class="row">
-
-  <div class="col-6 col-md-3 mt-5">
-    <img src="https://artgalleries.ir/wp-content/uploads/2024/01/Plus2-Gallery-logo-240x240.webp" alt="" width="70%" class="mx-auto d-block" style="border-radius:50%; box-shadow: -2px -2px 7px 7px rgba(233, 157, 42, 0.441);">
-    <h3 class="gallerylink" data-bs-toggle="modal" data-bs-target="#mmodal1" style="color: #ffd277">+گالری2</h3>
-
-  </div>
-  <div class="col-6 col-md-3 mt-5">
-    <img src="https://artgalleries.ir/wp-content/uploads/2024/02/Vali-Gallery-Logo-240x240.webp" alt="" width="70%" class="mx-auto d-block"  style="border-radius:50%; box-shadow: -2px -2px 7px 7px rgba(233, 157, 42, 0.441);">
-    <h3 class="gallerylink" data-bs-toggle="modal" data-bs-target="#mmodal2" style="color: #ffd277">گالری والی</h3>
-
-
-  </div>
-  <div class="col-6 col-md-3 mt-5">
-    <img src="https://artgalleries.ir/wp-content/uploads/2024/01/Sharif-Gallery-logo-240x240.webp" alt="" width="70%" class="mx-auto d-block"  style="border-radius:50%; box-shadow: -2px -2px 7px 7px rgba(233, 157, 42, 0.441);">
-    <h3 class="gallerylink" data-bs-toggle="modal" data-bs-target="#mmodal3" style="color: #ffd277">گالری شریف</h3>
-
-
-  </div>
-  <div class="col-6 col-md-3 mt-5">
-    <img src="https://artgalleries.ir/wp-content/uploads/2024/02/IvanSepid-Gallery-Logo-240x240.webp" alt="" width="70%" class="mx-auto d-block"  style="border-radius:50%; box-shadow: -2px -2px 7px 7px rgba(233, 157, 42, 0.441);">
-    <h3 class="gallerylink" data-bs-toggle="modal" data-bs-target="#mmodal4" style="color: #ffd277">گالری ایوان سپید</h3>
-
-
-  </div>
-</div>
-
-  </div>
- 
-
-
-  <div class="modal modal-dark fade  " id="mmodal1" tabindex="-1" aria-labelledby="mmodalLabel" style=" color: rgb(248, 247, 230)" >
-  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color:rgb(59, 15, 7)" >
-         <h1 style="text-align: right;direction: rtl;" class="mx-auto">گالری ۲+</h1>
-        <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
-     
-
-      </div>
-      <div class="modal-body" style="background-color:rgb(59, 15, 7)">
-        
-        <div class="row" style="background-color:rgb(59, 15, 7)">
-
-         <div class="col ">
-          <img src="https://artgalleries.ir/wp-content/uploads/2024/01/Plus2-Gallery-artgalleries-2-jpg.webp" alt="" style="width:60%;border-radius: 10px; box-shadow: -3px -4px 8px 10px rgba(174, 112, 18, 0.749); " class="mx-auto d-block">
-         </div>
-       
-         
-        
-        </div>
-
-        <div class="row mt-4">
-          <div class="col">
-            <h6>
-              گالری ۲+ توسط مجموعه دستان در سال ۱۳۹۴ راه اندازی شد. در این فضا آثار هنرمندان و استادان برجسته ایرانی به نمایش گذاشته می‌شود. دستان دارای برنامه ای گسترده و چند بعدی با تمرکز بر طیف کامل هنر معاصر و مدرن ایران است.
-            </h6>
-          </div>
-        </div>
-
-        <div class="row" class="mt-5">
-          <div class="col">
-
-         
-       
-        <table class="table table-dark table-striped mt-5" style="direction: rtl; ">
-  <thead>
-    <tr>
-     
-      <th scope="col">ساعات بازدید</th>
-      <th scope="col">دوشنبه تا پنج شنبه ۱۱ الی ۱۹جمعه‌ها ۱۳ الی ۲۰</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      
-      <td>روزهای تعطیل</td>
-      <td>شنبه، يكشنبه</td>
-    </tr>
-    <tr>
-   
-      <td>شماره تماس</td>
-      <td>۰۲۱۲۶۳۰۹۶۴۵</td>
-    </tr>
-    <tr>
-     
-      <td>وبسایت</td>
-      <td>
-        <a href="https://plus2.gallery/" style="text-decoration: none; color: azure;">plus2.gallery</a>
-      </td>
-    </tr>
-     <tr>
-     
-      <td>نشانی</td>
-      <td>تهران، فرشته، خیابان بیدار، پلاك ۸، طبقه دوم</td>
-    </tr>
-
-  </tbody>
-</table>
-          </div>
-        </div>
-
-
-
-      </div>
-    
-    </div>
-  </div>
-</div>
-
- <div class="modal modal-dark fade  " id="mmodal2" tabindex="-1" aria-labelledby="mmodalLabel" style=" color: rgb(248, 247, 230)" >
-  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color:rgb(59, 15, 7)" >
-         <h1 style="text-align: right;direction: rtl;" class="mx-auto">گالری والی</h1>
-        <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
-     
-
-      </div>
-      <div class="modal-body" style="background-color:rgb(59, 15, 7)">
-        
-        <div class="row" style="background-color:rgb(59, 15, 7)">
-
-         <div class="col ">
-          <img src="https://artgalleries.ir/wp-content/uploads/2024/02/Vali-Gallery-artgalleries-2-jpg.webp" alt="" style="width:60%;border-radius: 10px; box-shadow: -3px -4px 8px 10px rgba(174, 112, 18, 0.749); " class="mx-auto d-block">
-         </div>
-       
-         
-        
-        </div>
-
-        <div class="row mt-4">
-          <div class="col">
-            <h5>
-              گالری والی در تهران تاسیس شده است و از سال ۱۳۹۷ علاوه بر برگزاری نمایشگاه‌های گوناگون، به صورت گسترده میزبان پروژه‌های اجرایی مانند هنر چند رسانه‌ای، ویدئو و چیدمان است. این گالری نقش بسزایی در هنر مدرن و معاصر ایران دارد..
-            </h5>
-          </div>
-        </div>
-
-        <div class="row" class="mt-5">
-          <div class="col">
-
-         
-       
-        <table class="table table-dark table-striped mt-5" style="direction: rtl; ">
-  <thead>
-    <tr>
-     
-      <th scope="col">ساعات بازدید</th>
-      <th scope="col">یک‌شنبه تا پنج شنبه ۱۲ الی ۲۰ جمعه‌ها ۱۶ الی ۲۰</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      
-      <td>روزهای تعطیل</td>
-      <td>شنبه</td>
-    </tr>
-    <tr>
-   
-      <td>شماره تماس</td>
-      <td>۰۲۱۸۸۰۴۷۶۹۸</td>
-    </tr>
-    <tr>
-     
-      <td>وبسایت</td>
-      <td>
-        <a href="https://www.valiartgallery.com/" style="text-decoration: none; color: azure;">valiartgallery.com</a>
-      </td>
-    </tr>
-     <tr>
-     
-      <td>نشانی</td>
-      <td>تهران، ونک، خیابان خدامی، پلاک ۷۲</td>
-    </tr>
-
-  </tbody>
-</table>
-          </div>
-        </div>
-
-
-
-      </div>
-    
-    </div>
-  </div>
-</div>
-
-
-<div class="modal modal-dark fade  " id="mmodal3" tabindex="-1" aria-labelledby="mmodalLabel" style=" color: rgb(248, 247, 230)" >
-  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color:rgb(59, 15, 7)" >
-         <h1 style="text-align: right;direction: rtl;" class="mx-auto">گالری شریف</h1>
-        <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
-     
-
-      </div>
-      <div class="modal-body" style="background-color:rgb(59, 15, 7)">
-        
-        <div class="row" style="background-color:rgb(59, 15, 7)">
-
-         <div class="col ">
-          <img src="https://artgalleries.ir/wp-content/uploads/2024/01/Sharif-Gallery_artgalleries-2-jpg.webp" alt="" style="width:60%;border-radius: 10px; box-shadow: -3px -4px 8px 10px rgba(174, 112, 18, 0.749); " class="mx-auto d-block">
-         </div>
-       
-         
-        
-        </div>
-
-        <div class="row mt-4">
-          <div class="col">
-            <h5>
-             گالری شریف  در تابستان ۱۳۹۹ در تهران آغاز به کار نمود. رویکرد گالری شریف فراهم آوردن فضایی برای معرفی و فعالیت هنرمندان نوخاسته است؛ از این‌روی گالری از تجربه‌ها و دیدگاه‌های جدید در هنر معاصر استقبال می‌کند.
-            </h5>
-          </div>
-        </div>
-
-        <div class="row" class="mt-5">
-          <div class="col">
-
-         
-       
-        <table class="table table-dark table-striped mt-5" style="direction: rtl; ">
-  <thead>
-    <tr>
-     
-      <th scope="col">ساعات بازدید</th>
-      <th scope="col">یک‌شنبه تا پنج شنبه ۱۷ الی ۲۰ جمعه‌ها ۱۷ الی ۲۱</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      
-      <td>روزهای تعطیل</td>
-      <td>شنبه</td>
-    </tr>
-    <tr>
-   
-      <td>شماره تماس</td>
-      <td>۰۲۱۲۲۷۲۴۹۳۰</td>
-    </tr>
-    <tr>
-     
-      <td>وبسایت</td>
-      <td>
-        <a href="https://sharifgallery.art/?page_id=73&lang=en" style="text-decoration: none; color: azure;">sharifgallery.art</a>
-      </td>
-    </tr>
-     <tr>
-     
-      <td>نشانی</td>
-      <td>تهران، شریعتی، کوچه ماهروزاده، پلاک ۱۱</td>
-    </tr>
-
-  </tbody>
-</table>
-          </div>
-        </div>
-
-
-
-      </div>
-    
-    </div>
-  </div>
-</div>
-
-<div class="modal modal-dark fade  " id="mmodal4" tabindex="-1" aria-labelledby="mmodalLabel" style=" color: rgb(248, 247, 230)" >
-  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color:rgb(59, 15, 7)" >
-         <h1 style="text-align: right;direction: rtl;" class="mx-auto">گالری ایوان سپید</h1>
-        <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
-     
-
-      </div>
-      <div class="modal-body" style="background-color:rgb(59, 15, 7)">
-        
-        <div class="row" style="background-color:rgb(59, 15, 7)">
-
-         <div class="col ">
-          <img src="https://artgalleries.ir/wp-content/uploads/2024/02/IvanSepid-Gallery-artgalleries-3-jpg.webp" alt="" style="width:60%;border-radius: 10px; box-shadow: -3px -4px 8px 10px rgba(174, 112, 18, 0.749); " class="mx-auto d-block">
-         </div>
-       
-         
-        
-        </div>
-
-       
-
-        <div class="row" class="mt-5">
-          <div class="col">
-
-         
-       
-        <table class="table table-dark table-striped mt-5" style="direction: rtl; ">
-  <thead>
-    <tr>
-     
-      <th scope="col">ساعات بازدید</th>
-      <th scope="col">شنبه تا پنج‌شنبه: ۹ الی ۱۸ جمعه‌ها: ۱۵:۳۰ الی ۱۹:۳۰</th>
-    </tr>
-  </thead>
-  <tbody>
-   
-    <tr>
-   
-      <td>شماره تماس</td>
-      <td>۰۲۶۳۳۴۰۸۶۴۷</td>
-    </tr>
-    <tr>
-     
-      <td>وبسایت</td>
-      <td>
-        <a href="https://www.ivansepid.com/" style="text-decoration: none; color: azure;">ivansepid.com</a>
-      </td>
-    </tr>
-     <tr>
-     
-      <td>نشانی</td>
-      <td>کرج، مهرشهر، بلوار ارم، پلاک۲
-</td>
-    </tr>
-
-  </tbody>
-</table>
-          </div>
-        </div>
-
-
-
-      </div>
-    
-    </div>
-  </div>
-</div>
-
-
-<div style="background-color: #481717;border-radius: 20px; " >
-
-<div class="container-fluid"  data-aos="zoom-in-up" data-aos-duration="3000" >
-  <h3 style="text-align: center; margin-top: 50px;padding-top: 20px;font-weight: bold; color: #ffd277;"> برخی واژگان هنر </h3>
-  <h5 style="text-align: center; margin-top: 10px; color: aliceblue;">واژه‌نامه موضوعات و اصطلاحات مرسوم در تاریخ هنر</h5>
-
-  <div class="row">
-    <div class="col-12 col-md-4">
- 
-      
-      <div class="card-honar">
-<div class="card  mx-auto d-block  mt-5">
-  
-  <img style="width: 300px; height: 200px;" src="https://artgalleries.ir/wp-content/uploads/2024/02/Hans-Hofmann-Nulli-Secundus-360x578.webp" alt="">
-  
-  <div class="card__content">
-    <p class="card__title">حرکات آزادانه قلم‌مو</p>
-    <p class="card__description">. ین اصطلاح در ابتدا برای توصیف نقاشی هنرمندان اکسپرسیونیست انتزاعی۱ همچمون جکسون پولاک۲، ویلم دو کونینگ۳، فرانتس کلاین۴،  هانس هافمن۶ و دیگران (که به آنها نقاشان کنشی۷ نیز گفته می شود) استفاده شد.ژستورال اصطلاحی است که برای توصیف رنگ‌گذاری با استفاده از حرکات و رفت‌وبرگشت‌های آزادانه‌ی قلم‌مو استفاده می‌شود.
-
-</p>
-  </div>
-</div>
-</div>
-
-    </div>
-    <div class="col-12 col-md-4">
-
-      <div class="card-honar">
-<div class="card  mx-auto d-block  mt-5">
-  <img style="width: 300px; height: 200px;" src="https://artgalleries.ir/wp-content/uploads/2023/10/Barnett-Newman-360x360.webp" alt="">
- 
-  <div class="card__content">
-    <p class="card__title">نقاشی رنگْ پهنه</p>
-    <p class="card__description">اصطلاح نقاشی رنگْ پهنه برای ارجاع به آثار نقاشان انتزاعی در دهه های ۱۹۵۰ و ۱۹۶۰ به کار گرفته می‌شود که مشخصه آثارشان وجود پهنه‌های وسیعی از رنگ‌های مسطح و منفرد مستقل از خط و شکل، در ترکیب‌بندی‌هایی با ابعاد بزرگ و در عین حال بسیار ساده است.
-
-</p>
-  </div>
-</div>
-</div>
-
-</div>
-
- <div class="col-12 col-md-4">
-
-      <div class="card-honar">
-<div class="card  mx-auto d-block  mt-5">
-   <img style="width: 300px; height: 200px;" src="https://artgalleries.ir/wp-content/uploads/2023/10/artgalleries-ir-P78210_10-360x360.webp" alt="">
-
-  <div class="card__content">
-    <p class="card__title">هنر آلوده انگاشته</p>
-    <p class="card__description">صطلاح هنر آلوده انگاشته برای توصیف آثاری بکار می‌رود که بطور ویژه با ارجاع به بدن و عملکردهای آن، احساس تمیزی و نزاکت ما را مورد تهدید قرار داده یا از آن سرپیچی می‌کنند.صطلاح هنر آلوده انگاشته برای توصیف آثاری بکار می‌رود که بطور ویژه با ارجاع به بدن و عملکردهای آن، احساس تمیزی و نزاکت ما را مورد تهدید قرار داده یا از آن سرپیچی می‌کنند.</p>
-  </div>
-</div>
-</div>
-
-
-    </div>
-
-    </div>
-   
-  
-
-   <div class="row mt-5 pb-5">
-    <div class="col-12 col-md-4  ">
- 
-       <div class="card-honar">
-<div class="card  mx-auto d-block  mt-5">
-    <img style="width: 300px; height: 200px;" src="https://artgalleries.ir/wp-content/uploads/2023/10/Ana-Mendieta-artgalleries-ir-338x360.webp" alt="">
-
-  <div class="card__content">
-    <p class="card__title">هنر فمینیستی</p>
-    <p class="card__description">ه اجمال هنر فمینیستی به هنری اطلاق می‌شود که آگاهانه و در پرتو تحولات نظریه هنر فمینیستی در اوایل دهه ۱۹۷۰ خلق شده‌ است. هنر فمینیستی هنری ست که با هدف بازشناساندن هنرمندان زن و دستیابی به برابری برای آنان، سلطه مردان هم بر جامعه و هم بر هنر را به چالش کشیده و پیش‌فرض‌های مرتبط با زن بودن را زیر سوال می‌برد.</p>
-  </div>
-</div>
-</div>
-
-
-    </div>
-    <div class="col-12 col-md-4">
-
- <div class="card-honar">
-<div class="card  mx-auto d-block  mt-5">
-    <img style="width: 300px; height: 200px;" src="https://artgalleries.ir/wp-content/uploads/2024/04/Willem-de-Kooning-1952-oil-Woman-360x360.webp" alt="">
-
-  <div class="card__content">
-    <p class="card__title">اکسپرسیونیسم انتزاعی</p>
-    <p class="card__description">صطلاح اکسپرسیونیسم انتزاعی به اَشکال جدیدی از  اطلاق می‌شود که در دهه‌های ۱۹۴۰ و ۱۹۵۰ توسط نقاشان آمریکایی همچون جکسون پولاک۱، مارک روتکو۲ و ویلم دی‌کونینگ۳ بسط و توسعه یافتند و اغلب با نشان‌گذاری یا حرکات آزادنه قلم‌مو و بیان احساسات بصورت در-لحظه و خودانگیخته مشخص می‌شوند.</p>
-  </div>
-</div>
-</div>
-
-
-    </div>
-    <div class="col-12 col-md-4">
-
-       <div class="card-honar">
-<div class="card  mx-auto d-block  mt-5">
-    <img style="width: 300px; height: 200px;" src="https://artgalleries.ir/wp-content/uploads/2023/10/Tania-Bruguera-artgalleries-ir-360x360.webp" alt="">
-
-  <div class="card__content">
-    <p class="card__title">هنر کنشگر</p>
-    <p class="card__description">هنر کنشگر اصطلاحی ست برای توصیف گونه‌ای از هنر که ریشه در عمل‌گری داشته و مسائل و مشکلات سیاسی یا اجتماعی را هدف قرار می‌دهد. هدف هنرمندان کنشگر خلق هنری ست که از منظر سیاسی و اجتماعی اثر گذار بوده و‌ بجای آنکه ساختارهای فرهنگی قدرت را نمایندگی کرده و یا خیلی ساده آنها را توصیف کند، آنها را به چالش کشیده و مسئول شمارد.</p>
-  </div>
-</div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-</div>
-</div>
-
-
-
-
-<hr  style="margin: 80px;color: #a06711;">
-
-<div class="container-fluid mt-5" >
-  <div class="row mt-5">
-    <div class="col-6 col-md-3 mt-5" data-aos="fade-right" data-aos-duration="3000">
-
-      <div class="cardCTA ">
-<div class="card card-3 mx-auto d-block">
-    <h4 class="card__title">  <img src="./image/show-art.png" alt="" width="30px" >  آثار هنرمندان ما را ببینید     
-
-
-
-    </h4>
-    <p class="card__content">هر تابلو، دنیایی تازه‌ست؛ بگذار نگاهت در رنگ‌ها سفر کند.</p>
-    <div class="card__date">
-      برای مشاهده کلیک کنید
-    </div>
-    <div class="card__arrow">
-      <a href="./works.htm">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-            <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-        </svg>
-        </a>
-    </div>
-</div>
-</div>
-
-    </div>
-    <div class="col-6 col-md-3 mt-5" data-aos="fade-right" data-aos-duration="3000">
-
-       <div class="cardCTA ">
-<div class="card card-3 mx-auto d-block">
-    <h4 class="card__title">یک تابلوی خاص برای خانه‌تان انتخاب کنید
-
-  <img src="./image/shopping-cart.png" alt="" width="30px">
-
-    </h4>
-    <p class="card__content">انه‌ات شایسته‌ی هنری‌ست که روح را آرام می‌کند </p>
-    <div class="card__date">
-       برای مشاهده فروشگاه کلیلک کنید
-    </div>
-    <div class="card__arrow">
-      <a href="./shop.htm">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-            <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-        </svg>
-        </a>
-    </div>
-</div>
-    </div>
-    
-  </div>
-
-  <div class="col-6 col-md-3 mt-5" data-aos="fade-left" data-aos-duration="3000">
- <div class="cardCTA ">
-<div class="card card-3 mx-auto d-block">
-    <h3 class="card__title">با داستان هنرمندان آشنا شوید
-
-  <img src="./image/painter.png" alt="" width="30px">
-
-    </h3>
-    <p class="card__content">پشت هر ضربه‌ی قلم، قلبی می‌تپد؛ بیایید صدای آن را بشنویم </p>
-    <div class="card__date">
-    درباره هنرمندان بیشتر بدانید
-    </div>
-    <div class="card__arrow">
-      <a href="./artist.htm">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-            <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-        </svg>
-        </a>
-    </div>
-</div>
-    </div>
-
-  </div>
-    <div class="col-6 col-md-3 mt-5" data-aos="fade-left" data-aos-duration="3000">
- <div class="cardCTA ">
-<div class="card card-3 mx-auto d-block">
-    <h3 class="card__title">برای همکاری ، تماس بگیرید
-
-  <img src="./image/operator.png" alt="" width="30px">
-      
-    </h3>
-    <p class="card__content">گام اول برای خلق رؤیای هنری‌ات، همین امروز آغاز می‌شود. </p>
-    <div class="card__date">
-       برای مشاهده اطلاعات ما کلیلک کنید
-    </div>
-    <div class="card__arrow">
-      <a href="">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-            <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-        </svg>
-        </a>
-    </div>
-</div>
-    </div>
-
-    </div>
-</div>
-</div>
-
-<hr style="margin: 80px;color: #a06711;">
-
-
-
-<div class="row mt-5" style="background-color:#481717;" >
-<div class="col-12 col-md-4 " >
-
-  <h5 class="text-center text-light mt-5"><img src="./image/gallery.png" alt="" width="30px" > فروشگاه مارا در شبکه های اجتماعی دنبال کنید
-  </h5>
-
-  <div class="card-footer ">
-    
-<div class="card mx-auto">
-  <a href="#" class="socialContainer containerOne">
-    <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
-  </a>
-  
-  <a href="#" class="socialContainer containerTwo">
-    <svg class="socialSvg twitterSvg" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path> </svg>              </a>
-    
-  <a href="#" class="socialContainer containerThree">
-    <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-  </a>
-  
-  <a href="#" class="socialContainer containerFour">
-    <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16"> <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path> </svg>
-  </a>
-</div>             
-
-
-  </div>
-  
-</div>
-
-<div class="col-12 col-md-4 mt-5 ">
-  <h2 class="text-center fw-bold" style="color: #ffd277;">Art گالری <img src="./image/hand.png" alt="" width="30px"></h2>
-  <h6 class="text-center text-light">اینجا، هر تابلو پلی است میان روح هنرمند و نگاه شما.</h6>
-  <h2 class="text-center fw-bold mt-5" style="color: #ffd277;">عضوریت در خبر نام</h2>
-
-<div class="messageBox mx-auto m-3 ">
-  <div class="fileUploadWrapper">
-    <label for="file">
-      
-      <span class="tooltip">Add an image</span>
-    </label>
-     <button id="sendButton">
-    <svg viewBox="0 0 664 663" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
-        fill="none"
-      ></path>
-      <path
-        d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
-        stroke="#6c6c6c"
-        stroke-width="33.67"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
-  </button>
-    <input name="file" id="file" type="file" />
-  </div>
-  <input id="messageInput" type="text" placeholder="ایمیل خود را وارد کنید..." required="" />
- 
-</div>
-
-
-
-</div>
-<div class="col-12 col-md-4 ">
-        <h5 class="mb-1 mt-5 fs-2 text-light text-center ">لینک‌های مفید</h5>
-        <ul class="list-unstyled fs-4 mt-2 ">
-          <li><a href="./shop.htm">مشاهده فروشگاه</a></li>
-          <li><a href="./works.htm">دیدن اثر های هنری</a></li>
-          <li><a href="./artist.htm">اشنایی با هنرمندان</a></li>
-          <li data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #f8d287;"> ورود/ثبت نام</li>
-          <li><a href="#">تماس با ما</a></li>
-        </ul>
-
-</div>
-
-
-<hr style="margin: 80px;color: #a06711; ">
-
-<h5 class="text-light px-5 text-center">وبسایت آرت گالری از سال ۱۳۹۴ و در حوزه هنرهای تجسمی آغاز به کار کرده است. اطلاع‌رسانی پیرامون برنامه گالری ها و نگارخانه‌ها، نمایشگاه های هنری در رشته های نقاشی، طراحی، عکاسی، مجسمه سازی، نقاشی خط و برگزاری نمایشگاه‌های آنلاین، معرفی آثار هنرمندان از حوزه‌های فعالیت آرت گالریز است.</h5>
-
-<h3 class=" text-center mt-5" style="color: #feb951;"><img src="./image/show-art.png" alt="" style="width: 40px;" class=""> از سایت ما راضی هستید؟</h3>
-
-
-
-<div class="rating m-5 ">
-  <input type="radio" id="star-1" name="star-radio" value="star-1">
-  <label for="star-1">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-  </label>
-  <input type="radio" id="star-2" name="star-radio" value="star-1">
-  <label for="star-2">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-  </label>
-  <input type="radio" id="star-3" name="star-radio" value="star-1">
-  <label for="star-3">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-  </label>
-  <input type="radio" id="star-4" name="star-radio" value="star-1">
-  <label for="star-4">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-  </label>
-  <input type="radio" id="star-5" name="star-radio" value="star-1">
-  <label for="star-5">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-  </label>
-  
-</div>
-
-
-
-
-</div>
-
-  
-
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-
-</script>
-
-<script src="./main2.js"></script>
-  <script src="./main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-
-
-
-
-
-</html>
