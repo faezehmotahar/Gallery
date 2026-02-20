@@ -1,0 +1,898 @@
+
+@font-face {
+  font-family:b-ziba;
+  src: url(./Far_BadrBold/Far_BadrBold.ttf);
+ 
+}
+
+body, html {
+      margin: 0;
+      padding: 0;
+      font-family:b-ziba;
+   /* background-color: rgb(255, 253, 215); */
+/* height: auto; */
+   background-color: #121212;
+  
+
+
+      overflow-x: hidden;
+      overflow-y: visible;
+      text-align: right;
+    }
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    
+      
+    }
+    .list-unstyled li a{
+      color:#ffbd77;
+      text-align: right;
+      
+
+    }
+     .list-unstyled li{
+      
+      padding: 18px ;
+      text-align: right;
+      font-size: 24px;
+      font-weight:  900;
+      
+     }
+
+ .list-unstyled li a:hover{
+color: #fff3da;
+ }
+
+.Btnmenu {
+  width: 60px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+  margin-bottom: 20px;
+ 
+}
+
+.Btnmenu::before {
+  position: absolute;
+  content: "منو";
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.Btnmenu:hover {
+  background-position:right;
+  transition-duration: 1s;
+}
+
+.Btnmenu:hover::before {
+  background-position:right;
+  transition-duration: 1s;
+}
+
+.Btnmenu:active {
+  transform:scale(0.95);
+}
+    header h1 {
+      font-size:2.5rem;
+      font-weight: normal;
+      
+      text-align: center;
+      color: aliceblue;
+
+      
+    }
+    header h1 span {
+      font-weight: bold;
+      font-size: 4rem;
+      color: #ffd277;
+      
+
+    }
+   
+  
+
+    .carousel-item {
+      height: 100vh;
+      
+       
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 40px;
+    }
+    .carousel-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      width: 100%;
+      max-width: 1200px;
+    }
+   
+.carouselactive{
+  margin-top: 60px;
+ max-width:60%;
+      border-radius:20px;
+box-shadow:  -3px -4px 8px 10px rgba(190, 122, 20, 0.452);
+}
+    .carouselimg{
+      margin-top: 60px;
+ max-width:50%;
+      border-radius:20px;
+box-shadow:  -3px -4px 8px 10px rgba(190, 122, 20, 0.452);
+ 
+   
+
+      
+    }
+
+    .carouselimg {
+  animation: slideZoom 1s ease forwards;
+}
+
+@keyframes slideZoom {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+    .carousel-text {
+      max-width: 50%;
+    }
+    .carousel-text h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .carousel-text p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #f8d287
+    }
+    .carousel-text .btn {
+      background: white;
+      color: #481717;
+      border-radius: 0;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+  
+    @media (max-width: 768px) {
+      .carousel-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .carousel-content img {
+        max-width: 80%;
+      }
+      .carousel-text {
+        max-width: 100%;
+      }
+      .carousel-text h2 {
+        font-size: 2rem;
+      }
+      .carousel-text p {
+        font-size: 1rem;
+      }
+    }
+
+   
+.tabloimg{
+  width: 70%;
+  border-radius: 10px;
+box-shadow:  -3px -4px 8px 10px rgba(174, 112, 18, 0.749);
+
+}
+.text-tablo-img{
+  text-align: center;
+  margin-top: 18px;
+  font-weight: bold;
+}
+
+
+.gallerylink{
+ cursor: pointer;
+ text-align: center;
+ margin-top: 18px;
+}
+
+
+.card-honar .card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+box-shadow:  -3px -4px 8px 10px rgba(190, 122, 20, 0.452);
+
+}
+
+.card-honar .card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-honar .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card-honar .card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+     background-color: rgb(216, 193, 159);
+
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-honar .card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card-honar .card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card-honar .card:hover svg {
+  scale: 0;
+}
+
+ .card-honar .card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+
+.cardCTA  >.card-3 {
+  --border-radius: 0.75rem;
+  --primary-color: #925f21d6;
+  --secondary-color: #3c3852;
+  width: 250px;
+  height: 200px;
+  font-family: "Arial";
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: #f0d4a5;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
+  position: relative;
+}
+
+.cardCTA > .card-3 > * + * {
+  margin-top: 1.1em;
+}
+
+.cardCTA > .card-3 .card__content {
+  color: var(--secondary-color);
+  font-size: 0.86rem;
+}
+
+.cardCTA > .card-3 .card__title {
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.cardCTA > .card-3 .card__date {
+  color: #6e6b80;
+  font-size: 0.8rem;
+}
+
+ .cardCTA > .card-3 .card__arrow {
+  position: absolute;
+  background: var(--primary-color);
+  padding: 0.4rem;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  bottom: 0;
+  right: 0;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardCTA > .card-3 svg {
+  transition: 0.2s;
+}
+
+/* hover */
+.cardCTA > .card-3:hover .card__title {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+ .cardCTA > .card-3:hover .card__arrow {
+  background: #111;
+}
+
+.cardCTA > .card-3:hover .card__arrow svg {
+  transform: translateX(3px);
+}
+
+
+
+.messageBox {
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffeed4;
+  padding: 0 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(96, 65, 13);
+}
+.messageBox:focus-within {
+  border: 1px solid #606060;
+}
+.fileUploadWrapper {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#file {
+  display: none;
+}
+.fileUploadWrapper label {
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.fileUploadWrapper label svg {
+  height: 18px;
+}
+.fileUploadWrapper label svg path {
+  transition: all 0.3s;
+}
+.fileUploadWrapper label svg circle {
+  transition: all 0.3s;
+}
+.fileUploadWrapper label:hover svg path {
+  stroke: #fff;
+}
+.fileUploadWrapper label:hover svg circle {
+  stroke: #fff;
+  fill: #3c3c3c;
+}
+.fileUploadWrapper label:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+.tooltip {
+  position: absolute;
+  top: -40px;
+  display: none;
+  opacity: 0;
+  color: white;
+  font-size: 10px;
+  text-wrap: nowrap;
+  background-color: #ffe2a7c8;
+  padding: 6px 10px;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+  transition: all 0.3s;
+}
+#messageInput {
+  width: 200px;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  color: #f5f5f5;
+direction: rtl;
+}
+#messageInput:focus ~ #sendButton svg path,
+#messageInput:valid ~ #sendButton svg path {
+  fill: #3c3c3c;
+  stroke: white;
+}
+
+#sendButton {
+  width: fit-content;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#sendButton svg {
+  height: 18px;
+  transition: all 0.3s;
+  
+}
+#sendButton svg path {
+  transition: all 0.3s;
+  
+}
+#sendButton:hover svg path {
+  fill: #3682f4;
+  stroke: white;
+}
+
+.list-unstyled a{
+text-decoration: none;
+
+  
+}
+.list-unstyled li{
+  text-align: center;
+}
+
+
+
+
+/* From Uiverse.io by vinodjangid07 */ 
+.card-footer .card {
+  width: fit-content;
+  height: fit-content;
+  background-color: #481717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: #a06711;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+/* From Uiverse.io by SelfMadeSystem */ 
+.rating {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+  --stroke: #666;
+  --fill: #ffc73a;
+}
+
+.rating input {
+  appearance: unset;
+}
+
+.rating label {
+  cursor: pointer;
+}
+
+.rating svg {
+  width: 2rem;
+  height: 2rem;
+  overflow: visible;
+  fill: transparent;
+  stroke: var(--stroke);
+  stroke-linejoin: bevel;
+  stroke-dasharray: 12;
+  animation: idle 4s linear infinite;
+  transition: stroke 0.2s, fill 0.5s;
+}
+
+@keyframes idle {
+  from {
+    stroke-dashoffset: 24;
+  }
+}
+
+.rating label:hover svg {
+  stroke: var(--fill);
+}
+
+.rating input:checked ~ label svg {
+  transition: 0s;
+  animation: idle 4s linear infinite, yippee 0.75s backwards;
+  fill: var(--fill);
+  stroke: var(--fill);
+  stroke-opacity: 0;
+  stroke-dasharray: 0;
+  stroke-linejoin: miter;
+  stroke-width: 8px;
+}
+
+@keyframes yippee {
+  0% {
+    transform: scale(1);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+
+  30% {
+    transform: scale(0);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+
+  30.1% {
+    stroke: var(--fill);
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+
+  60% {
+    transform: scale(1.2);
+    fill: var(--fill);
+  }
+}
+
+
+
+
+
+.card {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+}
+
+.card p {
+  font-size: 14px;
+  color: white;
+}
+
+.slider {
+  width: 100%;
+  height: var(--height);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+}
+.slider .list {
+  display: flex;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  position: relative;
+}
+.slider .list .item {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  left: 100%;
+  animation: autoRun 20s linear infinite;
+  transition: filter 0.5s;
+  animation-delay: calc(
+    (20s / var(--quantity)) * (var(--position) - 1) - 50s
+  ) !important;
+}
+.slider .list .item img {
+  width: 100%;
+}
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
+.slider:hover .item {
+  animation-play-state: paused !important;
+  filter: grayscale(1);
+}
+.slider .item:hover {
+  filter: grayscale(0);
+}
+.slider[reverse="true"] .item {
+  animation: reversePlay 100s linear infinite;
+}
+@keyframes reversePlay {
+  from {
+    left: calc(var(--width) * -1);
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.form-label {
+  color: #f1ca96;
+}
+ 
+.form-control{
+  background-color: #ffe0b4e4;
+}
+    .nav-tabs .nav-link.active {
+      background-color: #a36a34de;
+      color: #f4dfa0;
+    }
+    .form-control:focus {
+      background-color: #ffe0b4e4;
+      border-color: #4f3122;
+      box-shadow: 0 0 0 0.3rem rgba(240, 167, 20, 0.322);
+    }
+    
+   /* From Uiverse.io by alexmaracinaru */ 
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #a8712ade;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.04rem;
+  color: #fde4bf;
+  
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #ca9c47;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b8833ade;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+
+
+   /* From Uiverse.io by javierBarroso */ 
+.button1 {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border: none;
+  background: rgba(180, 83, 107, 0.11);
+  border-radius: 5px;
+  transition: background 0.5s;
+
+}
+
+.X {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 1.5px;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.Y {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 1.5px;
+  background-color: #fff;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.close1 {
+  position: absolute;
+  display: flex;
+  padding: 0.8rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  top: -70%;
+  left: 50%;
+  width: 3em;
+  height: 1.7em;
+  font-size: 12px;
+  background-color: rgb(24, 22, 19);
+  color: rgb(236, 220, 187);
+  border: none;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+  background-color: #481717;
+}
+
+.button1:hover {
+  background-color: rgb(211, 21, 21);
+}
+
+.button1:active {
+  background-color: rgb(130, 0, 0);
+
+}
+
+.button1:hover > .close1 {
+  animation: close 0.2s forwards 0.25s;
+}
+
+@keyframes close1 {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+ .toast-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745; /* سبز موفقیت */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+  }
+  .toast-message.show {
+    opacity: 1;
+  }
