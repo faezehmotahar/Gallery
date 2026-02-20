@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="./style/works.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="   background-color: #121212;">
+    
+     
+    <div class="paralax">
+       <div class="btnmenu-container">
+        <button  data-aos="fade-right" data-aos-duration="2000" class="Btnmenu " data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasDarkNavbar" aria-label="Toggle ">
+</button>
+</div>
+<div class="offcanvas offcanvas-start  " tabindex="-1" id="offcanvasMenu" style="background-color: #110d0bc0 ;color: #f8d287;">
+    <div class="offcanvas-header">
+      
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled">
+        <li><a href="./index.html" class=" text-decoration-none"  >  <img src="./image/house.png" alt="" width="20px" style="margin: 0px 10px;">خانه</a></li>
+        <li><a href="./shop.htm" class=" text-decoration-none">  <img src="./image/store.png" alt="" width="20px" style="margin: 0px 10px;">فروشگاه</a></li>
+        <li><a href="./artist.htm" class=" text-decoration-none"> <img src="./image/painter.png" alt="" width="30px" style="margin: 0px 10px;"> هنرمندان</a></li>
+        <li><a href="./works.htm" class=" text-decoration-none" >  <img src="./image/gallery.png" alt="" width="20px" style="margin: 0px 10px;">    اثر های هنری</a></li>
+        <li data-bs-toggle="offcanvas" data-bs-target="#cartCanvas2"><a href="#" class=" text-decoration-none">   <img src="./image/shopping-cart.png" alt="" width="30px" style="margin: 0px 10px;">  سبد خرید</a></li>
+        
+        <li><a href="#contactus" class=" text-decoration-none">  <img src="./image/telephone.png" alt="" width="20px" style="margin: 0px 10px;"> تماس با ما</a></li>
+      
+      </ul>
+    </div>
+  </div>
+    </div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="cartCanvas2" style="background-color: #110d0bc0 ;color: #f8d287;">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">🛒 سبد خرید شما</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" style="background-color: #8e6020;"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul id="cart"></ul>
+    <hr>
+    <p>جمع کل: <span id="total">0</span> تومان</p>
+  </div>
+
+
+  <div class="offcanvas-footer">
+    
+  <button class="button-1 mx-auto d-block m-5" >  تسویه حساب
+</button>
+  </div>
+</div>
+
+<h5 data-aos="fade-up" data-aos-duration="2000" class="text-center p-5" style="color: #e6c88b;">«در این بخش می‌توانید مجموعه‌ای از تابلوهای هنری گالری ما را ببینید؛ آثاری که هرکدام روایتگر دنیایی از احساس و خلاقیت‌اند.»</h5>
+
+
+
+<div class="ui-input-container" id="searchInput">
+  <input
+    required=""
+    placeholder="دنبال اثر هنرمند خاصی هستید؟"
+    class="ui-input-2 text-center text-light"
+    type="text"
+    onkeyup="searchArtist2()"
+  />
+  <div class="ui-input-underline"></div>
+  <div class="ui-input-highlight"></div>
+ 
+  <div class="ui-input-icon" >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <path
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-width="2"
+        stroke="currentColor"
+        d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+      ></path>
+    </svg>
+  </div>
+  
+</div>
+
+<div class="" style="position: absolute;">
+<div class="dropdown text-center " style="cursor: pointer;">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f8d287;position: relative;left: 10px;">
+    دسته‌بندی آثار
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" >
+    <li><a class="dropdown-item" href="#"  data-filter="all">همه</a></li>
+    <li><a class="dropdown-item" href="#"  data-filter="نقاشی">نقاشی</a></li>
+    <li><a class="dropdown-item" href="#"  data-filter="طراحی">طراحی</a></li>
+    <li><a class="dropdown-item" href="#"  data-filter="کلاژ">کلاژ</a></li>
+  </ul>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row pt-5 pb-5" data-aos="fade-up" data-aos-duration="2000">
+        <div class="col-6 col-md-3">
+            
+<div class="card-1" data-category="نقاشی" data-bs-toggle="modal" data-bs-target="#modal1">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/10/mohammad-ali-taraghijah-artgalleries-32-dz-360x503.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5> محمد علی ترقی جاه</h5>
+</div>
+
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card-1" data-category="طراحی" data-bs-toggle="modal" data-bs-target="#modal2">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/11/Khosrow-Hassanzadeh-artgalleries-8-jpg.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5>    خسرو حسن زاده</h5>
+</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card-1" data-category="نقاشی"data-bs-toggle="modal" data-bs-target="#modal3">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Nicky-Nodjoumi-artgalleries-162-dz-360x544.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5> نیکزاد نجومی</h5>
+</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card-1" data-category="نقاشی"data-bs-toggle="modal" data-bs-target="#modal4">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/11/Farideh-Lashai-artgalleries-mah5-360x452.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5> فریده لاشایی</h5>
+</div>
+        </div>
+       
+    
+
+
+ 
+        <div class="col-6 col-md-3">
+            
+<div class="card-1" data-category="کلاژ"data-bs-toggle="modal" data-bs-target="#modal5">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/09/Parvaneh_Etemadi-artgalleriesir20-360x522.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5> پروانه اعتمادی</h5>
+</div>
+
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card-1" data-category="طراحی"data-bs-toggle="modal" data-bs-target="#modal6">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Mohammad-Ali-Taraghijah-artgalleries-44-ach-jpg.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5>      محمد علی ترقی جاه</h5>
+</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card-1" data-category="کلاژ"data-bs-toggle="modal" data-bs-target="#modal7">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Parvaneh-Etemadi_artgalleries_ir46-360x507.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5>  پروانه اعتماد</h5>
+</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card-1" data-category="طراحی"data-bs-toggle="modal" data-bs-target="#modal8">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/11/Khosrow-Hassanzadeh-artgalleries-7-360x577.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5>خسرو حسن زاده</h5>
+</div>
+        </div>
+       
+ 
+
+
+
+
+    
+        <div class="col-6 col-md-3">
+            
+<div class="card-1" data-category="نقاشی"data-bs-toggle="modal" data-bs-target="#modal9" >
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Nicky-Nodjoumi-artgalleries-26-asy-360x500.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5>  نیکزاد نجومی</h5>
+</div>
+
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card-1" data-category="طراحی"data-bs-toggle="modal" data-bs-target="#modal10">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Mohammad-Ali-Taraghijah-artgalleries-42-ach-jpg.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5>    محمد علی ترقی جاه</h5>
+</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card-1"data-category="نقاشی" data-bs-toggle="modal" data-bs-target="#modal11">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Nicky-Nodjoumi-artgalleries-artg2-360x468.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5> نیکزاد نجومی</h5>
+</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card-1"data-category="طراحی"data-bs-toggle="modal" data-bs-target="#modal12">
+    <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Charles-Hossein-Zenderoudi-artgalleries-mut1-360x486.webp" alt="" width="100%"height="100%" style="border-radius: 10px; background-color: #121212;">
+    <h5>  حسین زنده رودی</h5>
+</div>
+        </div>
+       </div>
+    
+</div>
+
+<button class="button-1 mx-auto d-block"> مشاهده موارد بیشتر
+</button>
+
+
+
+<div class="modal-work">
+<div class="modal  fade" id="modal1" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">محمد علی ترقی جاه</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> ترکیب مواد روی بوم</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> ۴۷ × ۳۳ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۳۸۵
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">783</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/10/mohammad-ali-taraghijah-artgalleries-32-dz-1098x1536.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal  fade" id="modal2" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> خسرو حسن زاده  </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> طراحی کنته و کواژ روی کاغذ</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> ۲۲۰ × ۱۲۰ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۳۷۹
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">1126</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/11/Khosrow-Hassanzadeh-artgalleries-8-360x538.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="modal  fade" id="modal3" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">   نیکزاد نجومی  </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> رنگ روغن روی بوم</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> ۱۵۲ × ۱۰۲ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۳۹۸
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">۹۳۲</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Nicky-Nodjoumi-artgalleries-162-dz-360x544.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal  fade" id="modal4" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">  فریده لاشایی  </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> آبرنگ و مداد روی مقوا</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> 50 × 60 سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">980</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/11/Farideh-Lashai-artgalleries-mah5-360x452.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal  fade" id="modal5" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">   پروانه اعتمادی   </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> کلاژ</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+   
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">269</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/09/Parvaneh_Etemadi-artgalleriesir20-360x522.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal  fade" id="modal6" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">  محمد علی ترقی جاه  </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">  مداد رنگی روی کاغذ</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">۵۸ × ۳۸.۵ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۳۶۷
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">738</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Mohammad-Ali-Taraghijah-artgalleries-44-ach-jpg.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal  fade" id="modal7" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">    پروانه اعتمادی  </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> کلاژ روی مقوا</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">۱۰۰ × ۷۰ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۳۹۸
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">290</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Parvaneh-Etemadi_artgalleries_ir46-360x507.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal  fade" id="modal8" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">    خسرو حسن زاده   </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">طراحی کنته و کواژ روی کاغذ</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">۲۲۰ × ۱۲۰ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۳۷۹
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">1128</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/11/Khosrow-Hassanzadeh-artgalleries-7-360x577.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal  fade" id="modal9" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">   نیکزاد نجومی   </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">رنگ روغن روی بوم</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">۱۸۳ × ۱۳۲ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۴۰۲
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">952</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Nicky-Nodjoumi-artgalleries-26-asy-360x500.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+<div class="modal  fade" id="modal10" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> محمد علی ترقی جاه  </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">زغال روی کاغذ
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">۴۶ × ۳۴.۵ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۳۶۷
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">740</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Mohammad-Ali-Taraghijah-artgalleries-42-ach-jpg.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal  fade" id="modal11" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> نیکزاد نجومی </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+   
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">۸۵ × ۶۵ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۳۹۲
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">965</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Nicky-Nodjoumi-artgalleries-artg2-360x468.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<div class="modal  fade" id="modal12" tabindex="-1" >
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark">
+      
+       <button style="margin: 20px; background-color: #a06711;padding: 10px;" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+       
+       
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+   <table class="table table-borderless text-light mt-5" style="border-radius: 10px; overflow: hidden;">
+  <tbody style="background-color: #121212;">
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4"> حسین زنده رودی  </th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">   نام هنرمند</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">ترکیب مواد روی بوم</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4"> متریال</td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">۱۳۰ × ۹۷ سانتی‌متر</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">ابعاد </td>
+    </tr>
+    <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">~۱۳۵۵
+</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">سال خلق </td>
+    </tr>
+
+     <tr>
+      <th scope="row" style="background-color: #121212;color:#e4b067" class="p-4">811</th>
+      <td style="background-color: #121212;color:#e4b067" class="p-4">شناسه اثر  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+     
+      </div>
+
+      <div class="col-12 col-md-6">
+       <img src="https://artgalleries.ir/wp-content/uploads/2023/10/Charles-Hossein-Zenderoudi-artgalleries-mut1-360x486.webp" alt="" class="work-img">
+
+      </div>
+      </div>
+
+
+<div class="row">
+  <div class="col"><button class="button-1 mx-auto d-block"> مشاهده اثار بیشتر از هنرمند
+</button>
+</div>
+</div>
+
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+<hr class="text-light w-75 mx-auto m-5 p-5">
+
+
+<div class="row mt-5 pt-5" style="background-color:#481717;" >
+<div class="col-12 col-md-4 " >
+
+  <h5 class="text-center text-light mt-5"><img src="./image/gallery.png" alt="" width="30px" > فروشگاه مارا در شبکه های اجتماعی دنبال کنید
+  </h5>
+
+  <div class="card-footer ">
+    
+<div class="card mx-auto">
+  <a href="#" class="socialContainer containerOne">
+    <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
+  </a>
+  
+  <a href="#" class="socialContainer containerTwo">
+    <svg class="socialSvg twitterSvg" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path> </svg>              </a>
+    
+  <a href="#" class="socialContainer containerThree">
+    <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
+  </a>
+  
+  <a href="#" class="socialContainer containerFour">
+    <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16"> <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path> </svg>
+  </a>
+</div>             
+
+
+  </div>
+  
+</div>
+
+<div class="col-12 col-md-4 mt-5 ">
+  <h2 class="text-center fw-bold" style="color: #ffd277;">Art گالری <img src="./image/hand.png" alt="" width="30px"></h2>
+  <h6 class="text-center text-light">اینجا، هر تابلو پلی است میان روح هنرمند و نگاه شما.</h6>
+  <h2 class="text-center fw-bold mt-5" style="color: #ffd277;">عضوریت در خبر نام</h2>
+
+<div class="messageBox mx-auto m-3 ">
+  <div class="fileUploadWrapper">
+    
+     <button id="sendButton">
+    <svg viewBox="0 0 664 663" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+        fill="none"
+      ></path>
+      <path
+        d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+        stroke="#6c6c6c"
+        stroke-width="33.67"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
+    </svg>
+  </button>
+    <input name="file" id="file" type="file" />
+  </div>
+  <input id="messageInput" type="text" placeholder="ایمیل خود را وارد کنید..." required="" />
+ 
+</div>
+
+
+
+</div>
+<div class="col-12 col-md-4 ">
+        <h5 class="mb-1 mt-5 fs-2 text-light text-center ">لینک‌های مفید</h5>
+        <ul class="list-unstyled fs-4 mt-2 ">
+          <li><a href="./shop.htm">مشاهده فروشگاه</a></li>
+          <li><a href="./works.htm">دیدن اثر های هنری</a></li>
+          <li><a href="./artist.htm">اشنایی با هنرمندان</a></li>
+          <li data-bs-toggle="modal" data-bs-target="#exampleModal"> ورود/ثبت نام</li>
+          <li ><a href="#" >تماس با ما</a></li>
+        </ul>
+
+</div>
+
+
+<hr style="margin: 80px;color: #a06711; ">
+
+<h5 class="text-light px-5 text-center">وبسایت آرت گالری از سال ۱۳۹۴ و در حوزه هنرهای تجسمی آغاز به کار کرده است. اطلاع‌رسانی پیرامون برنامه گالری ها و نگارخانه‌ها، نمایشگاه های هنری در رشته های نقاشی، طراحی، عکاسی، مجسمه سازی، نقاشی خط و برگزاری نمایشگاه‌های آنلاین، معرفی آثار هنرمندان از حوزه‌های فعالیت آرت گالریز است.</h5>
+
+<h3 class=" text-center mt-5" style="color: #feb951;"><img src="./image/show-art.png" alt="" style="width: 40px;" class=""> از سایت ما راضی هستید؟</h3>
+
+
+
+<div class="rating m-5 ">
+  <input type="radio" id="star-1" name="star-radio" value="star-1">
+  <label for="star-1">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+  </label>
+  <input type="radio" id="star-2" name="star-radio" value="star-1">
+  <label for="star-2">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+  </label>
+  <input type="radio" id="star-3" name="star-radio" value="star-1">
+  <label for="star-3">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+  </label>
+  <input type="radio" id="star-4" name="star-radio" value="star-1">
+  <label for="star-4">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+  </label>
+  <input type="radio" id="star-5" name="star-radio" value="star-1">
+  <label for="star-5">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+  </label>
+  
+</div>
+
+
+
+
+</div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+</script>
+
+
+  <script src="./main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
